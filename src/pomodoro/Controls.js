@@ -28,27 +28,19 @@ function Controls({setSession, setIsTimerRunning, session, isTimerRunning, focus
       }
     
       function increaseBreakDuration() {
-        if (breakDuration < 15) {
-          setBreakDuration(breakDuration + 1)
-        }
+          setBreakDuration(Math.min(breakDuration + 1, 15));
       }
     
       function decreaseBreakDuration() {
-        if (breakDuration > 1) {
-          setBreakDuration(breakDuration - 1)
-        }
+          setBreakDuration(Math.max(breakDuration - 1, 1));
       }
     
       function increaseFocusDuration() {
-        if (focusDuration < 60) {
-          setFocusDuration(focusDuration + 5)
-        }
+          setFocusDuration(Math.min(focusDuration + 5, 60));
       }
     
       function decreaseFocusDuration() {
-        if (focusDuration > 5) {
-          setFocusDuration(focusDuration - 5)
-        }
+          setFocusDuration(Math.max(focusDuration - 5, 5));
       }
  return (
   <div>
