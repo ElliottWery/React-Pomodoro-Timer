@@ -53,8 +53,6 @@ function Pomodoro() {
   const [isTimerRunning, setIsTimerRunning] = useState(false);
   // The current session - null where there is no session running
   const [session, setSession] = useState(null);
-
-  // ToDo: Allow the user to adjust the focus and break duration.
   const [focusDuration, setFocusDuration] = useState(25);
   const [breakDuration, setBreakDuration] = useState(5);
 
@@ -81,9 +79,7 @@ function Pomodoro() {
       <Controls setSession={setSession} setIsTimerRunning={setIsTimerRunning} session={session} isTimerRunning={isTimerRunning} 
       focusDuration={focusDuration} setFocusDuration={setFocusDuration} breakDuration={breakDuration} setBreakDuration={setBreakDuration} 
       />
-      {session && (
       <Progress session={session} focusDuration={focusDuration} breakDuration={breakDuration} />
-      )}
     </div>
   );
 }
